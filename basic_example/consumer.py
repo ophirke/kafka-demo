@@ -1,5 +1,6 @@
 import json
 from kafka import KafkaConsumer
+from tqdm import tqdm, trange
 
 # Consumer
 consumer = KafkaConsumer(
@@ -11,5 +12,8 @@ consumer = KafkaConsumer(
     value_deserializer=lambda v: json.loads(v.decode('utf-8')) if v else None
 )
 
+count = 0
 for message in consumer:
-    print(f"Received message: {message.value}")
+    count += 1
+    if count % 1000 == 0:
+        print(count)
