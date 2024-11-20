@@ -15,5 +15,5 @@ consumer = KafkaConsumer(
 count = 0
 for message in consumer:
     count += 1
-    if count % 1000 == 0:
+    if count % 100 == 0:
         print(count)

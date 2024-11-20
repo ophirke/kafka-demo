@@ -18,9 +18,9 @@ def produce_data(elems):
     producer.flush()
 
 if __name__ == '__main__':
-    threads = 8
+    threads = 2
     prod = 100
-    total = 1000000
+    total = 50000
     per_prod_list = [total // prod] * prod
     per_prod_list[-1] += total % prod
     with Pool(threads) as p:

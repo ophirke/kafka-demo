@@ -35,7 +35,7 @@ def produce_stock_data(symbol):
     for data_dict in tqdm(data_dicts):
         producer.send("stocks", value=data_dict)
         producer.flush()
-        time.sleep(0.03)
+        time.sleep(0.05)
 
 
 if __name__ == "__main__":
